@@ -24,19 +24,17 @@ hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 # create a mask
 mask = cv2.inRange(hsv, lower_green, upper_green)
 
-# morphological operations code
+# TODO morphological operations code
 
-# find connected components
+# TODO find connected components
 
-# find center of mass and draw a mark in the original image
+# TODO go through all (reasonable) found connected components
 
-# go through all (reasonable) found connected components
+# TODO (optional) check size and roundness as plausibility
 
-# check size and roundness as plausibility
+# TODO find and draw center
 
-# find and draw center
-
-# find and draw bounding box
+# TODO find and draw bounding box
 
 # print out number of connected components
 print('We have found x green smarties.')

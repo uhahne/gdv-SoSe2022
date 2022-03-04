@@ -1,20 +1,18 @@
 import numpy as np
 import cv2
 
-# open a video file
+# TODO open a video file
 
+# TODO get camera image parameters from get()
 
-# get camera image parameters from get()
+# TODO start a loop
 
+# TODO (in loop) read one video frame
 
-# start a loop
+# TODO (in loop) create four tiles of the image
 
-# read one video frame
+# TODO (in loop) show the image
 
-# create four tiles of the image
+# TODO (in loop) close the window and stop the loop if 'q' is pressed
 
-# show the image
-
-# close the window and stop the loop if 'q' is pressed
-
-# release the video and close all windows
+# TODO release the video and close all windows

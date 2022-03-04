@@ -23,8 +23,8 @@ print('Press q to close the window.')
 while True:
     # read a camera frame
     ret, frame = cap.read()
+    # check if capture was successful
     if (ret):
-
         # create four flipped tiles of the image
         img = np.zeros(frame.shape, np.uint8)
         smaller_frame = cv2.resize(frame, (0, 0), fx=0.5, fy=0.5)

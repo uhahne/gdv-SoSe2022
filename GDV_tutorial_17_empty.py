@@ -6,9 +6,9 @@
 import cv2
 import numpy as np
 
-# TODO: Setup SimpleBlobDetector parameters
+# TODO Setup SimpleBlobDetector parameters
 
-# TODO: Define a function to detect blobs, draw them and display the image
+# TODO Define a function to detect blobs, draw them and display the image
     # determine the used global variables
     
     # Create a detector with the parameters
@@ -25,21 +25,21 @@ import numpy as np
                                   
     # display the image
 
-# TODO: Define the callback function
+# TODO Define the callback function
 
     # provide access to the global blob detector parameters
     
     # use an image clone to for drawing
 
-    # TODO: Filter by area
+    # TODO Filter by area
     
-    # TODO: Change threshold parameters
+    # TODO Change threshold parameters
 
-    # TODO: Filter by circularity
+    # TODO Filter by circularity
 
-    # TODO: Filter by inertia
+    # TODO Filter by inertia
     
-    # TODO: Filter by convexity
+    # TODO Filter by convexity
 
     # call the detect, draw and show function
 
@@ -48,12 +48,11 @@ import numpy as np
 # load example image as color image
 img = cv2.imread('images\\blobtest.jpg', cv2.IMREAD_COLOR)
 
-# TODO: Create a window with sliders and show resulting image
+# TODO Create a window with sliders and show resulting image
 
 # HINT: Create sliders for all parameters using only one callback function
 
-# TODO: call the detect, draw and show function
+# TODO call the detect, draw and show function
 
 
-# TODO: wait until a key is pressed and end the application
-
+# TODO wait until a key is pressed and end the application

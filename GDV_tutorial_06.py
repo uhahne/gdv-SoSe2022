@@ -1,6 +1,5 @@
 import numpy as np
 import cv2
-import copy
 
 # print keyboard usage
 print('This is a HSV color detection demo. Use the keys to adjust the \
@@ -70,7 +69,7 @@ while True:
     ret, frame = cap.read()
     if (ret):
         # copy image to draw on
-        img = copy.copy(frame)
+        img = frame.copy()
 
         # draw arrows
         img = cv2.arrowedLine(img, (10, 10), (100, 10), blue, thin)

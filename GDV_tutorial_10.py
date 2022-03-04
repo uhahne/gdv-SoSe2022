@@ -8,7 +8,7 @@ window_width = 640
 window_height = 480
 
 
-def getFrequencies(image):
+def get_frequencies(image):
     """ Compute spectral image with a DFT
     """
     # convert image to floats and do dft saving as complex output
@@ -28,7 +28,7 @@ def getFrequencies(image):
     return spec, mag, phase
 
 
-def createFromSpectrum(mag, phase):
+def create_from_spectrum(mag, phase):
     # convert magnitude and phase into cartesian real and imaginary components
     real, imag = cv2.polarToCart(mag, phase)
 
@@ -68,7 +68,7 @@ def main():
     cv2.resizeWindow(title_original, window_width, window_height)
     cv2.imshow(title_original, image)
 
-    result, mag, phase = getFrequencies(image)
+    result, mag, phase = get_frequencies(image)
 
     # show the resulting image
     title_result = 'Frequencies image'
@@ -77,7 +77,7 @@ def main():
     cv2.resizeWindow(title_result, window_width, window_height)
     cv2.imshow(title_result, result)
 
-    back = createFromSpectrum(mag, phase)
+    back = create_from_spectrum(mag, phase)
 
     # and compute image back from frequencies
     title_back = 'Reconstructed image'

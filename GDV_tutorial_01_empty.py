@@ -1,7 +1,8 @@
-# first step is to import the opencv module which is called 'cv2'
+# TODO first step is to import the opencv module which is called 'cv2'
 
+# TODO check the opencv version
 
-# load an image with image reading modes using 'imread'
+# TODO load an image with image reading modes using 'imread'
 # cv2.IMREAD_UNCHANGED  - If set, return the loaded image as is (with alpha
 #                         channel, otherwise it gets cropped). Ignore EXIF
 #                         orientation.
@@ -11,10 +12,10 @@
 #                         color image.
 
 
-# resize image with 'resize'
+# TODO resize image with 'resize'
 
-# rotate image (but keep it rectangular) with 'rotate'
+# TODO rotate image (but keep it rectangular) with 'rotate'
 
-# save image with 'imwrite'
+# TODO save image with 'imwrite'
 
-# show the image with 'imshow'
+# TODO show the image with 'imshow'

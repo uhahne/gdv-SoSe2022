@@ -15,7 +15,7 @@ upper_green = np.array([hue + hue_range, saturation +
                        saturation_range, value + value_range])
 
 # load image
-img = cv2.imread('images\\smarties01.JPG', cv2.IMREAD_COLOR)
+img = cv2.imread('images\\smarties02.JPG', cv2.IMREAD_COLOR)
 img = cv2.resize(img, (800, 600))
 
 # convert to HSV
@@ -36,44 +36,41 @@ def morph_shape(val):
     elif val == 2:
         return cv2.MORPH_ELLIPSE
 
+
 # dilation with parameters
-
-
 def dilatation(img, size, shape):
     kernel = cv2.getStructuringElement(shape, (2 * size + 1, 2 * size + 1),
                                        (size, size))
     return cv2.dilate(img, kernel)
 
+
 # erosion with parameters
-
-
 def erosion(img, size, shape):
     kernel = cv2.getStructuringElement(shape, (2 * size + 1, 2 * size + 1),
                                        (size, size))
     return cv2.erode(img, kernel)
 
+
 # opening with parameters
-
-
 def opening(img, size, shape):
     kernel = cv2.getStructuringElement(shape, (2 * size + 1, 2 * size + 1),
                                        (size, size))
     return cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
 
+
 # closing with parameters
-
-
 def closing(img, size, shape):
     kernel = cv2.getStructuringElement(shape, (2 * size + 1, 2 * size + 1),
                                        (size, size))
     return cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
+
 
 # debug mask images to illustrate morphological operations
 # cv2.imshow('Mask image',mask)
 # cv2.waitKey(0)
 
 
-# morphological operations
+# apply morphological operations
 # see https://docs.opencv.org/master/db/df6/tutorial_erosion_dilatation.html
 kernel_size = 3
 kernel_shape = morph_shape(2)
@@ -86,12 +83,13 @@ connectivity = 8
 (numLabels, labels, stats, centroids) = cv2.connectedComponentsWithStats(
     mask, connectivity, cv2.CV_32S)
 
-# find center of mass and draw a mark in the original image
+# helper variables for drawing and candidate rejection
 red_BGR = (0, 0, 255)
 green_BGR = (0, 255, 0)
 circle_size = 10
 circle_thickness = 5
 min_size = 10
+expected_roundness = 0.5
 numRejected = 1
 
 # go through all (reasonable) found connected components
@@ -109,7 +107,7 @@ for i in range(1, numLabels):
         roundness = 1.0 / (w/h)
     elif h > w:
         roundness = 1.0 / (h/w)
-    if (roundness < .9):
+    if (roundness < expected_roundness):
         print('Found a component that is not round enough.')
         numRejected += 1
         continue  # ratio of width and height is not suitable

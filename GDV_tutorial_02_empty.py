@@ -1,29 +1,29 @@
 import cv2
 
-# loading images in grey and color
+# TODO load images in grey and color
 
-# do some print out about the loaded data
-
-
-# Continue with the color image or the grayscale image
+# TODO do some print out about the loaded data
 
 
-# Extract the size or resolution of the image
+# TODO Continue with the color image or the grayscale image
 
-# resize image
 
-# print first row
+# TODO Extract the size or resolution of the image
 
-# print first column
+# TODO resize image
 
-# set area of the image to black
+# TODO print first row
 
-# find all used colors in the image
+# TODO print first column
 
-# copy one part of an image into another one
+# TODO set an area of the image to black
 
-# save image
+# TODO find all used colors in the image
 
-# show the image
+# TODO copy one part of an image into another one
 
-# show the original image (copy demo)
+# TODO save image
+
+# TODO show the image
+
+# TODO show the original image (copy demo)

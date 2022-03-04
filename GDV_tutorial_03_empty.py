@@ -1,24 +1,24 @@
 import numpy as np
 import cv2
 
-# capture webcam image
+# TODO capture webcam image
 
 
-# get camera image parameters from get()
+# TODO get camera image parameters from get()
 
 
-# create a window for the video
+# TODO create a window for the video
 
 
-# start a loop
+# TODO start a loop
 
-# read a camera frame
+# TODO (in loop) read a camera frame and check if that was successful
 
-# create four flipped tiles of the image
+# TODO (in loop) create four flipped tiles of the image
 
-# display the image
+# TODO (in loop) display the image
 
-# press q to close the window
+# TODO (in loop) press q to close the window and exit the loop
 
 
-# release the video capture object and window
+# TODO release the video capture object and window

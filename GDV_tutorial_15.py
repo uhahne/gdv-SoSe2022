@@ -4,7 +4,7 @@ import cv2
 
 
 # function to detect and draw the corners
-def drawFeatures(corners):
+def draw_features(corners):
     # drawing helper variables
     thick = 5
     thin = 2
@@ -37,7 +37,7 @@ def on_change(val):
                                       useHarrisDetector=True)
     # returns corners as floating point values, hence convert to integer
     corners = np.int0(corners)
-    drawFeatures(corners)
+    draw_features(corners)
 
 
 # load example image as color image

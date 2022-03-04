@@ -5,7 +5,7 @@ import numpy as np
 params = cv2.SimpleBlobDetector_Params()
 
 
-def detectDrawAndShowBlobs(img):
+def detect_draw_and_show_blobs(img):
     # determine the used global variables
     global params, window_name
 
@@ -74,7 +74,7 @@ def on_change(val):
         params.filterByInertia = False
     params.minInertiaRatio = filter_inertia_val/100.0
 
-    detectDrawAndShowBlobs(img)
+    detect_draw_and_show_blobs(img)
 
 
 # load example image as color image
@@ -93,7 +93,7 @@ cv2.createTrackbar('minInertiaRatio (in %%)', window_name, 0, 100, on_change)
 cv2.createTrackbar('minConvexity (in %%)', window_name, 0, 100, on_change)
 
 # detect, draw and show blobs
-detectDrawAndShowBlobs(img)
+detect_draw_and_show_blobs(img)
 
 # wait until a key is pressed and end the application
 cv2.waitKey(0)

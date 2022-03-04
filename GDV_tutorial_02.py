@@ -1,5 +1,4 @@
 import cv2
-import copy
 
 # loading images in grey and color
 img_gray = cv2.imread('images/logo.png', cv2.IMREAD_GRAYSCALE)
@@ -17,8 +16,7 @@ print(img_color.shape)  # prints the size of the image array
 
 # Continue with the grayscale image
 # img = img_gray
-# copy the original image --> see https://docs.python.org/3/library/copy.html
-img = copy.copy(img_gray)
+img = img_gray.copy()
 
 # Extract the size or resolution of the image
 height = img.shape[0]

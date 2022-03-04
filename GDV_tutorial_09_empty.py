@@ -4,6 +4,7 @@ import numpy as np
 import time
 
 
+# TODO implement the convolution with opencv
 def convolution_with_opencv(image, kernel):
     # flip the kernel as opencv filter2D function is a
     # correlation not a convolution
@@ -48,41 +49,36 @@ def show_resulting_images(image, result):
         cv2.imwrite(res_filename, result)
     cv2.destroyAllWindows()
 
-# use a main method for the program
 
+# Load the image.
+image_name = 'images/Bumbu_Rawon.jpg'
+image = cv2.imread(image_name, cv2.IMREAD_GRAYSCALE)
+# image = cv2.resize(image, (320,213))
 
-def main():
-    # Load the image.
-    image_name = 'images/Bumbu_Rawon.jpg'
-    image = cv2.imread(image_name, cv2.IMREAD_GRAYSCALE)
-    # image = cv2.resize(image, (320,213))
+# TODO define kernel
+# TODO define kernel size
 
-    # define kernel
-    # define kernel size
+# TODO define Gaussian standard deviation (sigma). If it is non-positive,
+# it is computed from kernel_size as
+# sigma = 0.3*((ksize-1)*0.5 - 1) + 0.8
 
-    # define Gaussian standard deviation (sigma). If it is non-positive,
-    # it is computed from kernel_size as
-    # sigma = 0.3*((ksize-1)*0.5 - 1) + 0.8
+# TODO create the kernel with OpenCV
 
-    # create the kernel with OpenCV
+# visualize the kernel
+show_kernel(kernel)
 
-    # visualize the kernel
-    show_kernel(kernel)
+# TODO run convolution and measure the time it takes
+# start time to calculate computation duration
 
-    # run convolution and measure the time it takes
-    # start time to calculate computation duration
+# run the convolution
 
-    # run the convolution
+# end time after computation
 
-    # end time after computation
+# print timing results
+print('Computing the convolution of an image with a resolution of',
+        image.shape[1], 'by', image.shape[0], 'and a kernel size of',
+        kernel.shape[0], 'by', kernel.shape[1], 'took', end-start, 'seconds.')
 
-    # print timing results
-    print('Computing the convolution of an image with a resolution of',
-          image.shape[1], 'by', image.shape[0], 'and a kernel size of',
-          kernel.shape[0], 'by', kernel.shape[1], 'took', end-start, 'seconds.')
+# show the original and the resulting image
+show_resulting_images(image, result)
 
-    # show the original and the resulting image
-    show_resulting_images(image, result)
-
-
-# define to start the main method

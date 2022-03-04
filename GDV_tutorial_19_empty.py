@@ -15,7 +15,7 @@ with open('models/object_detection_classes_coco.txt',
 # generate a different color array for each of the classes
 colors = np.random.uniform(0, 255, size=(len(class_names), 3))
 
-# TODO: load the DNN model with cv2.dnn.readNet()
+# TODO load the DNN model with cv2.dnn.readNet()
 net = cv2.dnn.readNet('your code here')
 
 
@@ -35,8 +35,8 @@ if do_write_video:
 
 # initialize window and helper variables
 cv2.namedWindow('image', cv2.WINDOW_GUI_NORMAL)
-conf_thresh = 0.1  # TODO: play with this value
-max_object_size = 1.0  # TODO: play with this value
+conf_thresh = 0.1  # TODO play with this value
+max_object_size = 1.0  # TODO play with this value
 
 # detect objects in each frame of the video
 while cap.isOpened():
@@ -44,13 +44,13 @@ while cap.isOpened():
     if ret:
         image = frame
         image_height, image_width, _ = image.shape
-        # TODO: create blob from image using cv2.dnn.blobFromImage
+        # TODO create blob from image using cv2.dnn.blobFromImage
         blob = cv2.dnn.blobFromImage('your code here')
         # start time to calculate FPS
         start = time.time()
         # set the blob as input
         net.setInput(blob)
-        # TODO: the inference: compute the output by running a forward pass
+        # TODO the inference: compute the output by running a forward pass
         output = 'your code here'
         # end time after detection
         end = time.time()
@@ -58,12 +58,12 @@ while cap.isOpened():
         fps = 1 / (end-start)
         # loop over each of the detections that are stored in output
         for detection in output[0, 0, :, :]:
-            # TODO: extract the confidence of the detection
+            # TODO extract the confidence of the detection
             confidence = 'your code here'
             # draw bounding boxes only if the detection confidence is above
             # a certain threshold, else skip
             if confidence > conf_thresh:
-                # TODO: get the class id
+                # TODO get the class id
                 class_id = 'your code here'
                 # map the class id to the class
                 class_name = class_names[int(class_id)-1]

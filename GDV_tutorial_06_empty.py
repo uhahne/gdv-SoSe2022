@@ -1,6 +1,5 @@
 import numpy as np
 import cv2
-import copy
 
 # print keyboard usage
 print('This is a HSV color detection demo. Use the keys to adjust the \
@@ -33,12 +32,12 @@ font_size_smaller = .6
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 
-# TODO: define  RGB colors as variables
+# TODO define  RGB colors as variables
 
 
 # exemplary color conversion (only for the class), tests usage of cv2.cvtColor
 
-# color ranges, enter found default values and uncomment
+# color ranges, TODO enter found default values and uncomment
 # hue =
 hue_range = 10
 # saturation =
@@ -51,27 +50,27 @@ while True:
     ret, frame = cap.read()
     if (ret):
         # copy image to draw on
-        img = copy.copy(frame)
+        img = frame.copy()
 
-        # draw arrows (coordinate system)
+        # TODO draw arrows (coordinate system)
 
-        # computing color ranges for display
+        # TODO computing color ranges for display
 
-        # draw selection color circle and text for HSV values
+        # TODO draw selection color circle and text for HSV values
 
-        # convert to HSV
+        # TODO convert to HSV
 
-        # create a bitwise mask
+        # TODO create a bitwise mask
 
-        # apply mask
+        # TODO apply mask
 
-        # show the original image with drawings in one window
+        # TODO show the original image with drawings in one window
 
-        # show the masked image in another window
+        # TODO show the masked image in another window
 
-        # show the mask image in another window
+        # TODO show the mask image in another window
 
-        # deal with keyboard input
+        # TODO deal with keyboard input
 
     else:
         print('Could not start video camera')

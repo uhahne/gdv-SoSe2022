@@ -2,39 +2,41 @@ import cv2
 import math
 import operator
 
-# capture webcam image
+# TODO capture webcam image
 
 
-# get camera image parameters from get()
+# TODO get camera image parameters from get()
 
 
-# drawing helper variables
+# TODO create helper variables for drawing and writing text
 # thickness
 
 # color
 
 # fonts
 
-# variables for moving rectangle
 
-# start a loop
+# TODO create a function and a timer variable for the moving rectangle
 
-# capture the image
 
-# check if capture succeeded
+# TODO start a loop
 
-# draw a blue diagonal cross over the image
+# TODO (in loop) capture the image
 
-# draw a circle
+# TODO (in loop) check if capture succeeded
 
-# write some text
+# TODO (in loop) draw a blue diagonal cross over the image
 
-# draw arrows (potential assignment)
+# TODO (in loop) draw a circle
 
-# draw a rectangle that moves on a circular path
+# TODO (in loop) write some text
 
-# display the image
+# TODO (in loop) draw arrows
 
-# press q to close the window
+# TODO (in loop) draw a rectangle that moves on a circular path
 
-# release the video capture object and window
+# TODO (in loop) display the image
+
+# TODO (in loop) press q to close the window
+
+# TODO release the video capture object and window

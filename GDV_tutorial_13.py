@@ -2,38 +2,38 @@
 import numpy as np
 import cv2
 
-refPtSrc = []
-refPtDst = []
+ref_pt_src = []
+ref_pt_dst = []
 
 
-def clickSrc(event, x, y, flags, param):
+def click_src(event, x, y, flags, param):
     # grab references to the global variables
-    global refPtSrc
+    global ref_pt_src
     # if the left mouse button was clicked, add the point to the source array
     if event == cv2.EVENT_LBUTTONDOWN:
-        pos = len(refPtSrc)
+        pos = len(ref_pt_src)
         if (pos == 0):
-            refPtSrc = [(x, y)]
+            ref_pt_src = [(x, y)]
         else:
-            refPtSrc.append((x, y))
+            ref_pt_src.append((x, y))
         # draw a circle at the clicked position
-        cv2.circle(img, refPtSrc[pos], 4, (0, 255, 0), 2)
+        cv2.circle(img, ref_pt_src[pos], 4, (0, 255, 0), 2)
         cv2.imshow('Original', img)
 
 
-def clickDst(event, x, y, flags, param):
+def click_dst(event, x, y, flags, param):
     # grab references to the global variables
-    global refPtDst
+    global ref_pt_dst
     # if the left mouse button was clicked,
     # add the point to the destination array
     if event == cv2.EVENT_LBUTTONDOWN:
-        pos = len(refPtDst)
+        pos = len(ref_pt_dst)
         if (pos == 0):
-            refPtDst = [(x, y)]
+            ref_pt_dst = [(x, y)]
         else:
-            refPtDst.append((x, y))
+            ref_pt_dst.append((x, y))
         # draw a circle at the clicked position
-        cv2.circle(dst_transform, refPtDst[pos], 4, (0, 255, 0), 2)
+        cv2.circle(dst_transform, ref_pt_dst[pos], 4, (0, 255, 0), 2)
         cv2.imshow('Transformed image', dst_transform)
 
 
@@ -44,18 +44,18 @@ rows, cols, dim = img.shape
 clone = img.copy()
 dst_transform = np.zeros(img.shape, np.uint8)
 cv2.namedWindow('Original')
-cv2.setMouseCallback('Original', clickSrc)
+cv2.setMouseCallback('Original', click_src)
 cv2.namedWindow('Transformed image')
-cv2.setMouseCallback('Transformed image', clickDst)
+cv2.setMouseCallback('Transformed image', click_dst)
 
 computationDone = False
 # keep looping until the 'q' key is pressed
 while True:
     # if there are four reference points,
     # then compute the transform and apply the transformation
-    if not(computationDone) and (len(refPtSrc) == 4 and len(refPtDst) == 4):
+    if not(computationDone) and (len(ref_pt_src) == 4 and len(ref_pt_dst) == 4):
         T_perspective = cv2.getPerspectiveTransform(np.float32(
-            refPtSrc), np.float32(refPtDst), solveMethod=cv2.DECOMP_SVD)
+            ref_pt_src), np.float32(ref_pt_dst), solveMethod=cv2.DECOMP_SVD)
         print('\nProjective transform:\n', '\n'.join(
             ['\t'.join(['%03.3f' % cell for cell in row])
              for row in T_perspective]))
@@ -71,8 +71,8 @@ while True:
     if key == ord("r"):
         dst_transform = np.zeros(img.shape, np.uint8)
         img = clone.copy()
-        refPtSrc = []
-        refPtDst = []
+        ref_pt_src = []
+        ref_pt_dst = []
         computationDone = False
     # if the 'q' key is pressed, break from the loop
     elif key == ord("q"):

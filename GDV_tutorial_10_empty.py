@@ -6,7 +6,7 @@ import numpy as np
 window_width = 640
 window_height = 480
 
-# def getFrequencies(image):
+# TODO implement the function get_frequencies(image):
 # convert image to floats and do dft saving as complex output
 
 # apply shift of origin from upper left corner to center of image
@@ -18,7 +18,7 @@ window_height = 480
 # Return the resulting image (as well as the magnitude and phase for the inverse)
 
 
-# def createFromSpectrum():
+# TODO implement the function create_from_spectrum():
 # convert magnitude and phase into cartesian real and imaginary components
 
 # combine cartesian components into one complex image
@@ -31,10 +31,10 @@ window_height = 480
 
 # re-normalize to 8-bits
 
-
+# we use a main function this time: see https://realpython.com/python-main-function/ why it makes sense
 def main():
-    """ Load an image, compute frequency domain image from it and display both or vice versa """
-    image_name = 'images\chewing_gum_balls01.jpg'
+    # Load an image, compute frequency domain image from it and display both or vice versa
+    image_name = 'images/chewing_gum_balls01.jpg'
 
     # Load the image.
     image = cv2.imread(image_name, cv2.IMREAD_GRAYSCALE)
@@ -47,7 +47,7 @@ def main():
     cv2.resizeWindow(title_original, window_width, window_height)
     cv2.imshow(title_original, image)
 
-    #result = getFrequencies(image)
+    #result = get_frequencies(image)
     result = np.zeros((window_height, window_width), np.uint8)
 
     # show the resulting image
@@ -57,7 +57,7 @@ def main():
     cv2.resizeWindow(title_result, window_width, window_height)
     cv2.imshow(title_result, result)
 
-    # back = createFromSpectrum(??)
+    # back = create_from_spectrum(??)
     back = np.zeros((window_height, window_width), np.uint8)
 
     # and compute image back from frequencies
@@ -71,5 +71,6 @@ def main():
     cv2.destroyAllWindows()
 
 
+# starting the main function
 if (__name__ == '__main__'):
     main()

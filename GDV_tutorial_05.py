@@ -30,9 +30,8 @@ font_size_large = 3
 font_size_small = 1
 font = cv2.FONT_HERSHEY_SIMPLEX
 
-# variables for moving rectangle
 
-
+# function and timer variable for the moving rectangle
 def circle_path(t, scale, offset):
     res = (int(scale*math.cos(t)+offset), int(scale*math.sin(t)+offset))
     return res
