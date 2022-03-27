@@ -64,6 +64,18 @@ saturation_range = 100
 value = 200
 value_range = 100
 
+
+# implement the callback to pick the color on double click
+def color_picker(event, x, y, flags, param):
+    global hue, saturation, value
+    if event == cv2.EVENT_LBUTTONDBLCLK:
+        (h, s, v) = hsv[y, x]
+        hue = int(h)
+        saturation = int(s)
+        value = int(v)
+        print('New color selected:', (hue, saturation, value))
+
+
 while True:
     # get video frame (always BGR format!)
     ret, frame = cap.read()
@@ -113,7 +125,10 @@ while True:
         result = cv2.bitwise_and(img, img, mask=mask)
 
         # show the original image with drawings in one window
-        cv2.imshow('Original image', img)
+        title = 'Original image'
+        cv2.namedWindow(title)
+        cv2.setMouseCallback(title, color_picker)
+        cv2.imshow(title, img)
         # show the masked image in another window
         cv2.imshow('Masked image', result)
         # show the mask image in another window

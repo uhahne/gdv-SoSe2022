@@ -37,13 +37,23 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 
 # exemplary color conversion (only for the class), tests usage of cv2.cvtColor
 
-# color ranges, TODO enter found default values and uncomment
+# TODO enter found default values and uncomment
 # hue =
 hue_range = 10
 # saturation =
 saturation_range = 100
 # value =
 value_range = 100
+
+# implement the callback to pick the color on double click
+def color_picker(event, x, y, flags, param):
+    global hue, saturation, value
+    if event == cv2.EVENT_LBUTTONDBLCLK:
+        (h, s, v) = hsv[y, x]
+        hue = int(h)
+        saturation = int(s)
+        value = int(v)
+        print('New color selected:', (hue, saturation, value))
 
 while True:
     # get video frame (always BGR format!)
@@ -59,6 +69,7 @@ while True:
         # TODO draw selection color circle and text for HSV values
 
         # TODO convert to HSV
+        # hsv =
 
         # TODO create a bitwise mask
 
