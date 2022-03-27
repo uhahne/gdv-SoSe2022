@@ -45,6 +45,7 @@ saturation_range = 100
 # value =
 value_range = 100
 
+
 # implement the callback to pick the color on double click
 def color_picker(event, x, y, flags, param):
     global hue, saturation, value
@@ -54,6 +55,7 @@ def color_picker(event, x, y, flags, param):
         saturation = int(s)
         value = int(v)
         print('New color selected:', (hue, saturation, value))
+
 
 while True:
     # get video frame (always BGR format!)

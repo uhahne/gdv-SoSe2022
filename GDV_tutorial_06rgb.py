@@ -54,7 +54,8 @@ def color_picker(event, x, y, flags, param):
         blue_channel = int(b)
         red_channel = int(r)
         green_channel = int(g)
-        print('New color selected:', (blue_channel, green_channel, red_channel))
+        print('New color selected:',
+              (blue_channel, green_channel, red_channel))
 
 
 while True:
@@ -106,7 +107,7 @@ while True:
         cv2.namedWindow(title)
         cv2.setMouseCallback(title, color_picker)
         cv2.imshow(title, img)
-        
+
         # show the masked image in another window
         cv2.imshow('Masked image', result)
         # show the mask image in another window
