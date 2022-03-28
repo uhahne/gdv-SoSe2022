@@ -11,7 +11,7 @@ print('Use g/G to de-/increase the green value.')
 print('Use b/B to de-/increase the blue value.\n')
 
 # capture webcam image
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 # get camera image parameters from get()
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -40,17 +40,17 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 
 # color ranges, default values
 red_channel = 10
-red_range = 10
+red_range = 30
 green_channel = 10
-green_range = 10
+green_range = 30
 blue_channel = 245
-blue_range = 10
+blue_range = 30
 
 
 def color_picker(event, x, y, flags, param):
     global blue_channel, green_channel, red_channel
     if event == cv2.EVENT_LBUTTONDBLCLK:
-        (b, g, r) = rgb[y, x]
+        (r, g, b) = rgb[y, x]
         blue_channel = int(b)
         red_channel = int(r)
         green_channel = int(g)
