@@ -65,7 +65,7 @@ while True:
     # display the image and wait for a keypress
     cv2.imshow('Original', img)
     cv2.imshow('Transformed image', dst_transform)
-    key = cv2.waitKey(1) & 0xFF
+    key = cv2.waitKey(10)
 
     # if the 'r' key is pressed, reset the transformation
     if key == ord("r"):
