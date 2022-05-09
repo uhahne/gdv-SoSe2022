@@ -4,7 +4,7 @@ import cv2
 
 # define global arrays for the clicked (reference) points
 ref_pt_src = []
-ref_pt_src = []
+ref_pt_dst = []
 
 
 # TODO define one callback functions for each image window
@@ -20,7 +20,7 @@ def clickSrc(event, x, y, flags, param):
 
 def clickDst(event, x, y, flags, param):
     # grab references to the global variables
-    global ref_pt_src
+    global ref_pt_dst
     # if the left mouse button was clicked, add the point to the source array
    
         # draw a circle around the clicked point
