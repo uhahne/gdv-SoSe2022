@@ -181,3 +181,7 @@ A demonstration of object detection using a pre-trained deep neural network. Hea
 - [empty code](./GDV_tutorial_19_empty.py)
 - [complete code](./GDV_tutorial_19.py)
 
+### Tutorial #20
+Image classification with k-nearest neighbor approach using the CIFAR-10 data. Code is similar to the one used in assignment #4 and hence a bit cluttered.
+- [empty code](./GDV_tutorial_20_empty.py)
+- [complete code](./GDV_tutorial_20.py)
